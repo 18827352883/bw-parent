@@ -35,5 +35,12 @@
         select d.id,d.`name`,c.`name` categoryName,d.`code`,d.image,d.description
         from sys_dish d,sys_category c
         where d.category_id = c.id
+        <if test="sysDishCategoryDTO.categoryId != null">
+            and category_id = #{sysDishCategoryDTO.categoryId}
+        </if>
+        <if test="sysDishCategoryDTO.name != null and sysDishCategoryDTO.name !='' ">
+            and name like #{sysDishCategoryDTO.name}
+        </if>
+
     </select>
 </mapper>

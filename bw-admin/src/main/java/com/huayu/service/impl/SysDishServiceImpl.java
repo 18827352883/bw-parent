@@ -24,9 +24,9 @@ public class SysDishServiceImpl extends ServiceImpl<SysDishMapper, SysDish> impl
 
 
     @Override
-    public Page<SysDishCategoryDTO> queryAll(Page<SysDishCategoryDTO> page) {
-        sysDishMapper.queryAll(page);
-        return null;
+    public Page<SysDishCategoryDTO> queryAll(Page<SysDishCategoryDTO> page,SysDishCategoryDTO sysDishCategoryDTO) {
+        Page<SysDishCategoryDTO> sysDishCategoryDTOPage = sysDishMapper.queryAll(page, sysDishCategoryDTO);
+        return sysDishCategoryDTOPage;
     }
 }
 

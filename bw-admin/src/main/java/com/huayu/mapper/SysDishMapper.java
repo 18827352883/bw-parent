@@ -5,6 +5,7 @@ import com.huayu.dto.SysDishCategoryDTO;
 import com.huayu.entity.SysDish;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 import org.apache.ibatis.annotations.Mapper;
+import org.apache.ibatis.annotations.Param;
 
 import java.util.List;
 
@@ -20,7 +21,7 @@ public interface SysDishMapper extends BaseMapper<SysDish> {
      * 查询菜品信息及对应口味
      * @return
      */
-    Page<SysDishCategoryDTO> queryAll(Page<SysDishCategoryDTO> page);
+    Page<SysDishCategoryDTO> queryAll(Page<SysDishCategoryDTO> page,@Param("sysDishCategoryDTO") SysDishCategoryDTO sysDishCategoryDTO);
 }
 
 

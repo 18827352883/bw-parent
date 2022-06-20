@@ -13,6 +13,6 @@ import java.util.List;
 * @createDate 2022-06-20 16:35:14
 */
 public interface SysDishService extends IService<SysDish> {
-    Page<SysDishCategoryDTO> queryAll(Page<SysDishCategoryDTO> page);
+    Page<SysDishCategoryDTO> queryAll(Page<SysDishCategoryDTO> page,SysDishCategoryDTO sysDishCategoryDTO);
 
 }

@@ -7,11 +7,9 @@ import com.huayu.service.SysDishService;
 import com.huayu.util.R;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import java.util.List;
 
 @RestController
 @RequestMapping("/sysDish")
@@ -20,8 +18,8 @@ public class SysDishController {
     private SysDishService sysDishService;
 
     @GetMapping("/query")
-    public R<Page<SysDishCategoryDTO>> query(Page<SysDishCategoryDTO> page){
-        return R.success(sysDishService.queryAll(page));
+    public R<Page<SysDishCategoryDTO>> query(Page<SysDishCategoryDTO> page,SysDishCategoryDTO sysDishCategoryDTO){
+        return R.success(sysDishService.queryAll(page,sysDishCategoryDTO));
     }
 
 }
