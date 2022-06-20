@@ -1,0 +1,4 @@
+# Project exclude paths
+/bw-admin/target/
+/wb-commen/target/
+.idea
