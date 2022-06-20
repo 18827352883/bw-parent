@@ -6,15 +6,15 @@
 
     <resultMap id="BaseResultMap" type="com.huayu.entity.SysUser">
             <id property="id" column="id" jdbcType="BIGINT"/>
-            <result property="username" column="username" jdbcType="VARCHAR"/>
-            <result property="password" column="password" jdbcType="VARCHAR"/>
-            <result property="nickName" column="nick_name" jdbcType="VARCHAR"/>
-            <result property="userFace" column="user_face" jdbcType="VARCHAR"/>
-            <result property="gender" column="gender" jdbcType="TINYINT"/>
-            <result property="enable" column="enable" jdbcType="TINYINT"/>
-            <result property="lock" column="lock" jdbcType="TINYINT"/>
-            <result property="createTime" column="create_time" jdbcType="TIMESTAMP"/>
-            <result property="updateTime" column="update_time" jdbcType="TIMESTAMP"/>
+            <result property="username" column="username" />
+            <result property="password" column="password" />
+            <result property="nickName" column="nick_name"/>
+            <result property="userFace" column="user_face"/>
+            <result property="gender" column="gender"/>
+            <result property="enable" column="enable"/>
+            <result property="lock" column="lock" />
+            <result property="createTime" column="create_time"/>
+            <result property="updateTime" column="update_time"/>
     </resultMap>
 
     <sql id="Base_Column_List">
