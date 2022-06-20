@@ -7,7 +7,10 @@ import com.baomidou.mybatisplus.annotation.TableName;
 import java.io.Serializable;
 import java.math.BigDecimal;
 import java.util.Date;
+
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 /**
  * 菜品管理
@@ -15,6 +18,8 @@ import lombok.Data;
  */
 @TableName(value ="sys_dish")
 @Data
+@AllArgsConstructor
+@NoArgsConstructor
 public class SysDish implements Serializable {
     /**
      * 主键

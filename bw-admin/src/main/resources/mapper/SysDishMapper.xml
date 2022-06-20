@@ -3,7 +3,7 @@
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.huayu.mapper.SysDishMapper">
-    <resultMap id="BaseResultMap" type="com.huayu.dto.SysDishCategoryDTO">
+    <resultMap id="BaseResultMap" type="com.huayu.vo.SysDishVO">
             <id property="id" column="id"/>
             <result property="name" column="name"/>
             <result property="categoryId" column="category_id"/>
@@ -18,29 +18,25 @@
             <result property="createUser" column="create_user"/>
             <result property="updateUser" column="update_user"/>
             <result property="isDeleted" column="is_deleted"/>
-        <association property="sysCategory">
-            <result property="id" column="category_id"/>
+        <association property="sysCategory" javaType="com.huayu.entity.SysCategory">
+            <result property="id" column="categoryId"/>
             <result property="name" column="categoryName"/>
         </association>
     </resultMap>
 
-    <sql id="Base_Column_List">
-        id,name,category_id,
-        price,code,image,
-        description,status,sort,
-        create_time,update_time,create_user,
-        update_user,is_deleted
-    </sql>
     <select id="queryAll" resultMap="BaseResultMap">
-        select d.id,d.`name`,c.`name` categoryName,d.`code`,d.image,d.description
-        from sys_dish d,sys_category c
-        where d.category_id = c.id
-        <if test="sysDishCategoryDTO.categoryId != null">
-            and category_id = #{sysDishCategoryDTO.categoryId}
-        </if>
-        <if test="sysDishCategoryDTO.name != null and sysDishCategoryDTO.name !='' ">
-            and name like #{sysDishCategoryDTO.name}
-        </if>
+        select d.id,d.category_id categoryId,d.`name`,c.`name` categoryName,d.`code`,d.image,d.description
+        from sys_dish d left join sys_category c
+        on d.category_id = c.id
+        <where>
+            <if test="sysDishVO.categoryId != null">
+                and d.category_id = #{sysDishVO.categoryId}
+            </if>
+            <if test="sysDishVO.name != null and sysDishVO.name !='' ">
+                and d.name like concat('%',#{sysDishVO.name},'%')
+            </if>
+        </where>
+
 
     </select>
 </mapper>

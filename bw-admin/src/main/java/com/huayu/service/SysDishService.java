@@ -1,11 +1,9 @@
 package com.huayu.service;
 
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
-import com.huayu.dto.SysDishCategoryDTO;
 import com.huayu.entity.SysDish;
 import com.baomidou.mybatisplus.extension.service.IService;
-
-import java.util.List;
+import com.huayu.vo.SysDishVO;
 
 /**
 * @author HUANGBOWEN
@@ -13,6 +11,6 @@ import java.util.List;
 * @createDate 2022-06-20 16:35:14
 */
 public interface SysDishService extends IService<SysDish> {
-    Page<SysDishCategoryDTO> queryAll(Page<SysDishCategoryDTO> page,SysDishCategoryDTO sysDishCategoryDTO);
+    Page<SysDishVO> queryAll(Page<SysDishVO> page, SysDishVO sysDishVO);
 
 }

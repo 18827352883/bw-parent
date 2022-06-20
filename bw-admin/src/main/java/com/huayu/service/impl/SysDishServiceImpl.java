@@ -2,14 +2,13 @@ package com.huayu.service.impl;
 
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
-import com.huayu.dto.SysDishCategoryDTO;
 import com.huayu.entity.SysDish;
+import com.huayu.vo.SysDishVO;
 import com.huayu.service.SysDishService;
 import com.huayu.mapper.SysDishMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.util.List;
 
 /**
 * @author HUANGBOWEN
@@ -24,8 +23,8 @@ public class SysDishServiceImpl extends ServiceImpl<SysDishMapper, SysDish> impl
 
 
     @Override
-    public Page<SysDishCategoryDTO> queryAll(Page<SysDishCategoryDTO> page,SysDishCategoryDTO sysDishCategoryDTO) {
-        Page<SysDishCategoryDTO> sysDishCategoryDTOPage = sysDishMapper.queryAll(page, sysDishCategoryDTO);
+    public Page<SysDishVO> queryAll(Page<SysDishVO> page, SysDishVO sysDishVO) {
+        Page<SysDishVO> sysDishCategoryDTOPage = sysDishMapper.queryAll(page, sysDishVO);
         return sysDishCategoryDTOPage;
     }
 }

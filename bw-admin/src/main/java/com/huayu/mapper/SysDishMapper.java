@@ -1,13 +1,11 @@
 package com.huayu.mapper;
 
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
-import com.huayu.dto.SysDishCategoryDTO;
 import com.huayu.entity.SysDish;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
+import com.huayu.vo.SysDishVO;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
-
-import java.util.List;
 
 /**
 * @author HUANGBOWEN
@@ -21,7 +19,9 @@ public interface SysDishMapper extends BaseMapper<SysDish> {
      * 查询菜品信息及对应口味
      * @return
      */
-    Page<SysDishCategoryDTO> queryAll(Page<SysDishCategoryDTO> page,@Param("sysDishCategoryDTO") SysDishCategoryDTO sysDishCategoryDTO);
+    Page<SysDishVO> queryAll(Page<SysDishVO> page, @Param("sysDishVO") SysDishVO sysDishVO);
+
+
 }
 
 
