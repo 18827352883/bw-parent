@@ -10,7 +10,7 @@ spring:
     password: 123456
     type: com.alibaba.druid.pool.DruidDataSource
   jackson:
-    date-format: yyyy-MM-dd
+    date-format: yyyy-MM-dd HH:mm:ss
     time-zone: GMT+8
 
 #配置 mybatisplus
